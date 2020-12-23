@@ -49,6 +49,7 @@ func Assess(proxy *model.Proxy) {
 	default:
 		log.Errorf("Unknown proxy scheme type: %d", proxy.SchemeType)
 	}
+	schemeTest = HTTPS // 我只需要https的，就这样改一下
 
 	testOK := HTTPBinTester(proxy.IP, proxy.Port, schemeTest)
 	AssessorStackLength--
